@@ -29,7 +29,7 @@ jobs:
         echo "Application name: ${{env.APPLICATION_NAME}} "
         
     - name: List current folder
-      run: ls - la
+      run: ls -la
       
    # - name: Git Clone my repo
       #uses: actions/checkout@v1
