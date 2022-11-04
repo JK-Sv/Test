@@ -1,0 +1,38 @@
+#--------------------------------------------------------
+#
+#GitHubActions
+#
+# CopyLeft ...
+#---------------------------------------------------------
+
+name: DevOpsBasicsTest-FirstAction
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  myTest:
+    runs-on: windows
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello, World! from myTestjob"
+    #--------------------------------------------------------
+      #- uses: actions/checkout@v1
+      #- name: Run a one-line cript
+        #run: echo, Hello World!
+      #- name: Run a multy-line cript
+       # run: |
+        #  echo Add other actions to buid,
+        # echo test, and deploy your project.
+    #---------------------------------------------------------
+  myDeploy:
+    runs-on: windows
+   # needs: [myTest]
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello, World! from myDeployjob"
+      
