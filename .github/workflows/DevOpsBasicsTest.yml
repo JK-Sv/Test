@@ -65,12 +65,10 @@ jobs:
           env:
             LOCAL_STEP_VAR: "This is Super local Enviroment variable" 
              
-        
-      
     - name: Printing Deployment Pakage
       run: echo "Deploy Package name is ${{env.DEPLOY_PACKAGE_NAME}}"
       
-    - name: Let's test some Pakages if they are here 1
+    - name: Lets test some Pakages if they are here 1
       run: aws --version
       
     - name: Let's test some Pakages if they are here 2
