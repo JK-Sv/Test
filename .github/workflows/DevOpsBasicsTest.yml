@@ -27,6 +27,16 @@ jobs:
         echo "Hello Message1"
         echo "Hello Message2"
         echo "Application name: ${{env.APPLICATION_NAME}} "
+        
+    - name: List current folder
+      run: ls - la
+      
+    - name: Git Clone my repo
+      uses: actions/checkout@v1
+      
+    - name: List current folder
+      run: ls - la
+      
     #--------------------------------------------------------
       #- uses: actions/checkout@v1
       #- name: Run a one-line cript
@@ -39,11 +49,32 @@ jobs:
   myDeploy:
     runs-on: windows-latest
     needs: [myTest]
+    env:
+      VAR1 : "This is Job Level Variable_1"
+      VAR2 : "This is Job Level Variable_2"
     
     steps:
     - name: Print Hello Message
       run: echo "Hello, World! from myDeployjob"
       
+    - name: Print env Vars
+      run: |
+        echo "Var1 = ${{env.VAR1}}"
+        echo "Var2 = ${{env.VAR2}}"
+        echo "Var2 = $LOCAL_STEP_VAR"
+          env:
+            LOCAL_STEP_VAR: "This is Super local Enviroment variable" 
+             
+        
+      
     - name: Printing Deployment Pakage
       run: echo "Deploy Package name is ${{env.DEPLOY_PACKAGE_NAME}}"
       
+    - name: Let's test some Pakages if they are here 1
+      run: aws --version
+      
+    - name: Let's test some Pakages if they are here 2
+      run: zip 
+      
+    - name: Let's test some Pakages if they are here 2
+      run: zip --version
