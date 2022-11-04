@@ -1,0 +1,20 @@
+#--------------------------------------------------------
+#
+#GitHubActions
+#
+# CopyLeft ...
+#---------------------------------------------------------
+
+name: DevOpsBasicsTest-SecondAction
+on:
+  push:
+    branches:
+      -master
+      
+jobs:
+  myTest:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello, World! from myTest job"
