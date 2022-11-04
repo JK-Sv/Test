@@ -6,7 +6,9 @@
 #---------------------------------------------------------
 
 name: DevOpsBasicsTest-FirstAction
-
+env:
+  APPLICATION_NAME    : "MyApp"
+  DEPLOY_PACKAGE_NAME : "app-deploy-ver-${{github.sha}}"
 on:
   push:
     branches:
@@ -19,6 +21,12 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello, World! from myTestjob"
+      
+    - name: Execute few comands
+      run: |
+        echo "Hello Message1"
+        echo "Hello Message2"
+        echo "Application name: ${{env.APPLICATION_NAME}} "
     #--------------------------------------------------------
       #- uses: actions/checkout@v1
       #- name: Run a one-line cript
@@ -30,9 +38,12 @@ jobs:
     #---------------------------------------------------------
   myDeploy:
     runs-on: windows-latest
-   # needs: [myTest]
+    needs: [myTest]
     
     steps:
     - name: Print Hello Message
       run: echo "Hello, World! from myDeployjob"
+      
+    - name: Printing Deployment Pakage
+      run: echo "Deploy Package name is ${{env.DEPLOY_PACKAGE_NAME}}"
       
