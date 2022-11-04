@@ -63,7 +63,7 @@ jobs:
         echo "Var2 = ${{ env.VAR2 }}"
         echo "Var3 = $LOCAL_STEP_VAR"
       env:
-        LOCAL_STEP_VAR : "This is Super local Enviroment variable" 
+        LOCAL_STEP_VAR: "This is Super local Enviroment variable" 
              
     - name: Printing Deployment Pakage
       run: echo "Deploy Package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
@@ -72,7 +72,7 @@ jobs:
       run: aws --version
       
     - name: Let's test some Pakages if they are here 2
-      run: zip --version
+      run: rar --version
       
     #- name: Let's test some Pakages if they are here 2
-     # run: zip --version
+     # run: rar --version
