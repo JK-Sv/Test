@@ -18,3 +18,10 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello, World! from myTest job"
+
+  myDeploy:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello, World! from myDeploy job"
