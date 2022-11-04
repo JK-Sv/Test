@@ -41,3 +41,6 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello, World! from myDeploy job"
+    
+    - name: Printing Deployment Package
+      run: echo "Deploy Packag Name is ${{env.DEPLOY_PACKAGE_NAME}}"
