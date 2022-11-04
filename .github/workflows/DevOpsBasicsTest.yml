@@ -31,11 +31,11 @@ jobs:
     - name: List current folder
       run: ls - la
       
-    - name: Git Clone my repo
-      uses: actions/checkout@v1
+   # - name: Git Clone my repo
+      #uses: actions/checkout@v1
       
-    - name: List current folder
-      run: ls - la
+    #- name: List current folder
+      #run: ls - la
       
     #--------------------------------------------------------
       #- uses: actions/checkout@v1
