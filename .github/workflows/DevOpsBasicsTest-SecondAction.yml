@@ -16,7 +16,7 @@ on:
       
 jobs:
   myTest:
-    runs-on: windows-latest
+    runs-on: Alpine-latest
     
     steps:
     - name: Print Hello Message
