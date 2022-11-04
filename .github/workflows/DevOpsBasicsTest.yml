@@ -14,7 +14,7 @@ on:
 
 jobs:
   myTest:
-    runs-on: windows
+    runs-on: windows-latest
     
     steps:
     - name: Print Hello Message
@@ -29,7 +29,7 @@ jobs:
         # echo test, and deploy your project.
     #---------------------------------------------------------
   myDeploy:
-    runs-on: windows
+    runs-on: windows-latest
    # needs: [myTest]
     
     steps:
